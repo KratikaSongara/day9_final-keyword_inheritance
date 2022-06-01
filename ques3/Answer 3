@@ -1,0 +1,30 @@
+Why is multiple inheritance not supported in Java at class level ?
+Multiple inheritance is not supported in java because it make make our compiler to go into ambiguous state.
+For example, suppose I have :-
+A class, B class and C class.
+A class has :-
+	public class A{
+		public void hi()
+		{
+			System.out.println("Hi");
+		}
+	}
+
+And class B also has :-
+	public class B{
+		public void hi()
+		{
+			System.out.println("Hi");
+		}
+	}
+	
+Now if I try to extend both A and B in C class :-
+	public class C extends A,B{
+		public static void main(String[] args)
+		{
+			C c = new C();
+			c.hi();
+		}
+	}
+	Now, since both A and B have same methods our compiler will get confused about which class' method it should call and that is why multiple inheritance is not supported in Java at classlevel.
+	
